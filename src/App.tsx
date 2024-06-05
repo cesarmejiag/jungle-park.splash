@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useRef } from "react";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -41,7 +41,7 @@ function App() {
           </p>
           <p>
             <strong className="highlight-text uppercase">
-              ¡Prepárate para explorar
+              ¡Prepárate para explorar!
             </strong>
           </p>
         </div>
