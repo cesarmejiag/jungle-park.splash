@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useCallback, useEffect, useRef } from "react";
+import Footer from "./components/Footer";
+import "./App.css";
+
+import logo from "./assets/images/logo.webp";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const leafsRef = useRef(null);
+  /* const handleMousemove = useCallback((event: MouseEvent) => {
+    const el = leafsRef.current;
+    if (el) {
+      const ratio = 15;
+    }
+  }, []);
+
+  useEffect(() => {
+    const el = leafsRef.current;
+
+    if (el) {
+      window.addEventListener("mousemove", handleMousemove);
+      return () => {
+        window.removeEventListener("mousemove", handleMousemove);
+      };
+    }
+  }, [handleMousemove]); */
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="holder">
+      <main className="main">
+        <div className="logo">
+          <img src={logo} alt="Jungle Park - Parque Inflable by Axenett" />
+        </div>
+        <div className="text text-center">
+          <h2 className="highlight-color uppercase">
+            ¡Estamos inflando la Diversión!
+          </h2>
+          <p>
+            Nuestro sitio web está en construcción, igual que la selva de
+            diversión que te espera. Pronto podrás saltar a la aventura en
+            nuestro parque inflable con estilo de jungla
+          </p>
+          <p>
+            <strong className="highlight-text uppercase">
+              ¡Prepárate para explorar
+            </strong>
+          </p>
+        </div>
+      </main>
+      <Footer></Footer>
+      <div className="leafs" ref={leafsRef}></div>
+    </div>
+  );
 }
 
-export default App
+export default App;

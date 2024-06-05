@@ -1,42 +1,56 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.main {
+  margin: auto 0;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  margin: 0 auto 30px;
+  max-width: 340px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.text {
+  margin: 0 auto;
+  max-width: 460px;
+}
+
+.highlight-text {
+  color: var(--highlight-color);
+  font-family: var(--bold-font);
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.leafs {
+  background: transparent url("./assets/images/leafs.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  left: 50%;
+  max-height: 720px;
+  max-width: 720px;
+  mix-blend-mode: multiply;
+  overflow: hidden;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 100%;
+  z-index: -1;
+}
+
+.leafs::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .highlight-text {
+    font-size: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .leafs {
+    max-height: 590px;
+    max-width: 590px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
